@@ -1,0 +1,190 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="SmartDesk - The Future of Work">
+  <main>
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center pt-20">
+      <div class="container mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h1 class="text-5xl font-bold mb-6 leading-tight">
+              Welcome to the Future of Work: <span class="text-primary-600 dark:text-primary-400">SmartDesk</span>
+            </h1>
+            <p class="text-xl text-gray-600 dark:text-gray-300 mb-8">
+              An IoT-integrated office desk designed to revolutionize productivity and comfort.
+            </p>
+            <div class="flex gap-4">
+              <a href="#features" class="px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white rounded-lg transition">
+                Learn More
+              </a>
+              <a href="#pricing" class="px-6 py-3 border border-primary-600 text-primary-600 hover:bg-primary-50 dark:border-primary-400 dark:text-primary-400 dark:hover:bg-primary-900/50 rounded-lg transition">
+                Pre-Order Now
+              </a>
+            </div>
+          </div>
+          <div class="relative">
+            <div class="absolute inset-0 bg-gradient-to-r from-primary-500/20 to-purple-500/20 rounded-3xl filter blur-3xl">
+            </div>
+            <img
+              src="/desk-preview.png"
+              alt="SmartDesk Preview"
+              class="relative rounded-3xl shadow-2xl"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-gray-50 dark:bg-gray-800">
+      <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-16">SmartDesk Features</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          {[
+            {
+              title: 'Height Adjustment',
+              description: 'Electrically adjustable height with memory for user preferences.',
+              icon: '📏'
+            },
+            {
+              title: 'Touchscreen Control',
+              description: 'Integrated panel for height, lighting, and settings control.',
+              icon: '🎮'
+            },
+            {
+              title: 'Ambient Lighting',
+              description: 'Smart LED lighting customizable for color and brightness.',
+              icon: '💡'
+            },
+            {
+              title: 'Device Charging',
+              description: 'Built-in wireless chargers and USB-C ports.',
+              icon: '🔋'
+            },
+            {
+              title: 'IoT Integration',
+              description: 'Connect to smart home systems for voice control.',
+              icon: '🤖'
+            },
+            {
+              title: 'Environmental Sensors',
+              description: 'Measure air quality, temperature, and humidity.',
+              icon: '🌡️'
+            }
+          ].map(feature => (
+            <div class="p-6 bg-white dark:bg-gray-900 rounded-xl shadow-lg">
+              <div class="text-4xl mb-4">{feature.icon}</div>
+              <h3 class="text-xl font-semibold mb-2">{feature.title}</h3>
+              <p class="text-gray-600 dark:text-gray-400">{feature.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20">
+      <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-16">Choose Your SmartDesk</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          {[
+            {
+              name: 'Standard',
+              price: '899',
+              features: [
+                'Height Adjustment',
+                'Basic LED Lighting',
+                'USB-C Charging Ports',
+                'Touch Controls',
+                '2-Year Warranty'
+              ]
+            },
+            {
+              name: 'Pro',
+              price: '1,299',
+              features: [
+                'All Standard Features',
+                'Wireless Charging',
+                'Advanced IoT Integration',
+                'Environmental Sensors',
+                '3-Year Warranty'
+              ]
+            },
+            {
+              name: 'Enterprise',
+              price: '1,699',
+              features: [
+                'All Pro Features',
+                'Premium Materials',
+                'Extended IoT Features',
+                'Priority Support',
+                '5-Year Warranty'
+              ]
+            }
+          ].map(plan => (
+            <div class="p-8 bg-white dark:bg-gray-900 rounded-xl shadow-lg">
+              <h3 class="text-2xl font-bold mb-2">{plan.name}</h3>
+              <div class="text-4xl font-bold mb-6">${plan.price}</div>
+              <ul class="space-y-4 mb-8">
+                {plan.features.map(feature => (
+                  <li class="flex items-center">
+                    <svg class="w-5 h-5 text-primary-600 dark:text-primary-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+              <a
+                href="#contact"
+                class="block w-full text-center px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white rounded-lg transition"
+              >
+                Pre-Order Now
+              </a>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50 dark:bg-gray-800">
+      <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-16">Get in Touch</h2>
+        <div class="max-w-2xl mx-auto">
+          <form class="space-y-6">
+            <div>
+              <label class="block text-sm font-medium mb-2">Name</label>
+              <input
+                type="text"
+                class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+              />
+            </div>
+            <div>
+              <label class="block text-sm font-medium mb-2">Email</label>
+              <input
+                type="email"
+                class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+              />
+            </div>
+            <div>
+              <label class="block text-sm font-medium mb-2">Message</label>
+              <textarea
+                rows="4"
+                class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              class="w-full px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white rounded-lg transition"
+            >
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
